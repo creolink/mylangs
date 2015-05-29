@@ -1,6 +1,6 @@
 <?php
 
-namespace Jakub\LangsBundle\Tests\Controller;
+namespace Jakub\MylangsBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
