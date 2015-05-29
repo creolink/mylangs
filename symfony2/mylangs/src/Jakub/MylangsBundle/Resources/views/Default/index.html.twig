@@ -1,5 +1,14 @@
-{% extends "TwigBundle::layout.html.twig" %}
-
-{% block body %}
-Hello {{ name }}!
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+        <title>{% block title %}symblog{% endblock %} - symblog</title>
+        {% block stylesheets %}
+        {% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+		Hello {{ name }}!
+       {% block javascripts %}{% endblock %}
+    </body>
+</html>
