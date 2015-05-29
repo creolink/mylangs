@@ -1,6 +1,9 @@
 jakub_mylangs:
     resource: "@JakubMylangsBundle/Resources/config/routing.yml"
-    prefix:   /
+    #prefix:   /
+
+#_acme_demo:
+#    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
 
 app:
     resource: "@AppBundle/Controller/"

@@ -1,0 +1,32 @@
+
+Napisac aplikacje do nauki jezykow:
+ wykorzystujemy git, composer, s2 (doctrine), z2
+
+Zalozenia:
+- strona glowna - wybor jezyka (en, de)
+- logowanie
+- menu: wyszukaj, rzeczowniki, czasowniki (odmiana), przymiotniki, zwroty, tabelki
+- dodaj slowo: rzeczownik, przymiotnik, czasownik, tlumaczenie na pl, dodaj rowniez w jezyku en
+  rzeczownik: odmiana przez przypadki, liczba poj / mnoga, policzalny/niepoliczalny
+  czasownik: nieregularny / regularny, odmiana przez osoby, przez przypadki
+- dodaj zwrot: zwrot, tlumaczenie, dodaj rowniez w jezyku en
+- dodaj tabelke
+- wyslij mailem, zrob pdf
+- wyloguj
+
+
+Struktura DB MySQL
+
+users
+languages
+words (id, type, countable, pl)
+phrases (id, fraze, pl)
+variety_persons (words_id, s_i, s_you, s_he, s_she, s_it, p_we, p_you, p_they)
+variety_cases (words_id, nominative, genitive, dative, accusative, ablative, locative, vocative)
+variety_numbers (words_id, singular, plural)
+tables (id, name, cols, rows)
+tables_cols (tables_id, col, name)
+tables_rows (tables_id, row, name)
+tables_data (tables_id, col, row, content)
+
+

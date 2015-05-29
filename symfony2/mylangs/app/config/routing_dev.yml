@@ -13,6 +13,10 @@ _configurator:
 _main:
     resource: routing.yml
 
+#jakub_mylangs:
+#    resource: "@JakubMylangsBundle/Resources/config/routing.yml"
+#    prefix:   /
+
 # AcmeDemoBundle routes (to be removed)
 #_acme_demo:
 #    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
