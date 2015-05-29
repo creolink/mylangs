@@ -1,0 +1,7 @@
+jakub_langs:
+    resource: "@JakubLangsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

@@ -1,0 +1,3 @@
+jakub_langs_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: JakubLangsBundle:Default:index }
