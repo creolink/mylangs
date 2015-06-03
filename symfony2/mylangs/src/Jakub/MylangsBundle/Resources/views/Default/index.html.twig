@@ -2,13 +2,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
-        <title>{% block title %}symblog{% endblock %} - symblog</title>
-        {% block stylesheets %}
-        {% endblock %}
+        <title>{% block title %}Hello in Mylangs application{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-		Hello {{ name }}!
-       {% block javascripts %}{% endblock %}
+		<div>
+	        <div class="en"></div>
+			<div class="de"></div>
+		</div>
+		<div>
+			<input type="text" id="login" name="login" value=""/>
+			<input type="text" id="pass" name="pass" value=""/>
+			<input type="submit" id="lgb" value="Login"/>
+		</div>
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

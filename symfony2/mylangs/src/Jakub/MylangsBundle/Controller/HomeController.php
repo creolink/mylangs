@@ -7,10 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 #use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 #use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class HomeController extends Controller
 {
-    public function indexAction($name = 'aa')
+    public function indexAction()
     {
-        return $this->render('JakubMylangsBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('JakubMylangsBundle:Default:index.html.twig');
     }
 }

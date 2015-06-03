@@ -1,3 +1,7 @@
 jakub_mylangs_homepage:
-    path:     /
-    defaults: { _controller: JakubMylangsBundle:Default:index }
+    path: /
+    defaults: { _controller: JakubMylangsBundle:Home:index }
+    
+jakub_mylangs_login:
+    path: /login
+    defaults: { _controller: JakubMylangsBundle:Home:login }
