@@ -5,3 +5,7 @@ jakub_mylangs_homepage:
 jakub_mylangs_login:
     path: /login
     defaults: { _controller: JakubMylangsBundle:Home:login }
+    
+jakub_mylangs_account:
+    path: /account
+    defaults: { _controller: JakubMylangsBundle:Home:account }
