@@ -11,6 +11,6 @@ class HomeController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('JakubMylangsBundle::index.html.twig');
+        return $this->render('JakubMylangsBundle:Home:home.html.twig');
     }
 }
