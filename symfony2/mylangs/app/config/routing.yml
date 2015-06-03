@@ -5,6 +5,6 @@ jakub_mylangs:
 #_acme_demo:
 #    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+#app:
+#    resource: "@AppBundle/Controller/"
+#    type:     annotation
