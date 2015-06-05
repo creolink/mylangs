@@ -19,6 +19,11 @@ class HomeController extends Controller
 		
 		$oForm = $this->createForm(new LoginType(), $oLogin);
 		
+		$oValidator = $this->get('validator');
+		$errors = $oValidator->validate($oLogin);
+		
+		//echo '<pre>'.print_r($errors, TRUE).'</pre>'; die();
+		
 		/*
 		$oForm = $this->createFormBuilder($oLogin)
 			->setMethod('POST')
