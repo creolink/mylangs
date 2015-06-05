@@ -1,0 +1,22 @@
+div.en, div.de {
+	width: 400px;
+	height: 300px;
+	border: 1px solid #000;
+	display: inline-block;
+	margin: 10px;
+}
+
+div.en {
+	background: #fff url("/bundles/jakubmylangs/images/flag.en.jpg") no-repeat center; 
+}
+
+div.de {
+	background: #fff url("/bundles/jakubmylangs/images/flag.de.jpg") no-repeat center; 
+}
+
+/*
+label.required
+{
+	width: 100px;
+}
+*/

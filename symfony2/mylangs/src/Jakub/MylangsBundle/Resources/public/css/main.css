@@ -2,3 +2,14 @@ body {
     font-size: 14px;
     background-color: #fff;
 }
+
+.ctn
+{
+	max-width: 1024px;
+	margin: auto;
+}
+
+.ce
+{
+	text-align: center;
+}

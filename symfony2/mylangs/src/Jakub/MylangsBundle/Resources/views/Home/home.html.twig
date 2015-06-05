@@ -1,10 +1,19 @@
 {% extends "JakubMylangsBundle::base.html.twig" %}
+
+{% block stylesheets %}
+	<link href="{{ asset('/bundles/jakubmylangs/css/home.css') }}" type="text/css" rel="stylesheet" />
+	{{ parent() }}
+{% endblock %}
+
 {% block content %}
-<div>
-	<div class="en"></div>
-	<div class="de"></div>
-</div>
-<div>
-	{{ form(form) }}
-</div>
+	
+	<div class="ctn ce">
+		<h1>Welcome into MyLangs application by Jakub Luczynski</h1>
+		<div class="en"></div>
+		<div class="de"></div>
+	</div>
+	<div class="ctn ce">
+		<p>Please login into your account</p>
+		{{ form(form) }}
+	</div>
 {% endblock %}
