@@ -15,6 +15,7 @@ class HomeController extends Controller
 		$oForm = $this->createFormBuilder()
 			->add('login', 'text')
 			->add('password', 'password')
+			->add('lang', 'hidden')
 			->add('save', 'submit')
 			->getForm();
 		

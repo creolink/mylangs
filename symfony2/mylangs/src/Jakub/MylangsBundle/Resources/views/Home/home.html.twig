@@ -5,12 +5,28 @@
 	{{ parent() }}
 {% endblock %}
 
+{% block javascripts %}
+	<script language="javascript" type="text/javascript">
+		$('.flag').click(
+			function()
+			{
+				$('#form_lang').val($(this).attr('id'));
+				
+				$('.flag').each(function() {
+					$(this).removeClass('active');
+				});
+				
+				$(this).addClass('active');
+			}
+		);
+	</script>
+{% endblock %}
+
 {% block content %}
-	
 	<div class="ctn ce">
 		<h1>Welcome into MyLangs application by Jakub Luczynski</h1>
-		<div class="en"></div>
-		<div class="de"></div>
+		<div id="en" class="en flag"></div>
+		<div id="de" class="de flag"></div>
 	</div>
 	<div class="ctn ce">
 		<p>Please login into your account</p>
