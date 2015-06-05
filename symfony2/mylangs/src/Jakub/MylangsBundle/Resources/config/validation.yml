@@ -1,0 +1,6 @@
+Jakub\MylangsBundle\Entity\Login:
+    properties:
+        _sLogin:
+            - NotBlank: ~
+        _sPassword:
+            - NotBlank: ~
