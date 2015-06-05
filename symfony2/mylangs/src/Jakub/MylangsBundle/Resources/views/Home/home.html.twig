@@ -10,7 +10,7 @@
 		$('.flag').click(
 			function()
 			{
-				$('#form_lang').val($(this).attr('id'));
+				$('#{{ form.lang.vars.id}}').val($(this).attr('id'));
 				
 				$('.flag').each(function() {
 					$(this).removeClass('active');
@@ -30,6 +30,7 @@
 	</div>
 	<div class="ctn ce">
 		<p>Please login into your account</p>
-		{{ form(form) }}
+		{{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
+		
 	</div>
 {% endblock %}
