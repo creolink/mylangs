@@ -19,6 +19,16 @@
 				$(this).addClass('active');
 			}
 		);
+
+		// default language is en
+		if (!$('#{{ form.lang.vars.id}}').val())
+		{
+			$('#en').click();
+		}
+		else // is selected
+		{
+			$('#' + $('#{{ form.lang.vars.id}}').val()).click();
+		}
 	</script>
 {% endblock %}
 
@@ -31,6 +41,5 @@
 	<div class="ctn ce">
 		<p>Please login into your account</p>
 		{{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
-		
 	</div>
 {% endblock %}
