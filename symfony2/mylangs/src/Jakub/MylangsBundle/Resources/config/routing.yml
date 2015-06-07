@@ -8,4 +8,4 @@ jakub_mylangs_login:
     
 jakub_mylangs_account:
     path: /account
-    defaults: { _controller: JakubMylangsBundle:Home:account }
+    defaults: { _controller: JakubMylangsBundle:Account:index }

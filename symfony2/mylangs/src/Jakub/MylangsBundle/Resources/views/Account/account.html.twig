@@ -1,0 +1,21 @@
+{% extends "JakubMylangsBundle::base.html.twig" %}
+
+{% block stylesheets %}
+	<link href="{{ asset('/bundles/jakubmylangs/css/account.css') }}" type="text/css" rel="stylesheet" />
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	<script language="javascript" type="text/javascript">
+		alert('Welcome into your accont');
+	</script>
+{% endblock %}
+
+{% block content %}
+	<div class="ctn ce">
+		<h1>Welcome into MyLangs application by Jakub Luczynski</h1>
+	</div>
+	<div class="ctn ce">
+		<p>Welcome into your accont</p>
+	</div>
+{% endblock %}

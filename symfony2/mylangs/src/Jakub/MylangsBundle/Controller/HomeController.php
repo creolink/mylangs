@@ -1,5 +1,4 @@
 <?php
-
 namespace Jakub\MylangsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
