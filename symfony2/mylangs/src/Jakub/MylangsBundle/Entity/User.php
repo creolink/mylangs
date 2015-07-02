@@ -1,6 +1,7 @@
 <?php
 namespace Jakub\MylangsBundle\Entity;
 
+use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /* php app/console doctrine:generate:entities Jakub/MylangsBundle/Entity/User */
@@ -12,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="users", options={"comment":"Users"})
  */
-class User {
+class User implements UserInterface {
 
     /**
      * @ORM\Id

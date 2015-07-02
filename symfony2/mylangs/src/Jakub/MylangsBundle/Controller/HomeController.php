@@ -29,7 +29,7 @@ class HomeController extends Controller {
           ->add('lang', 'hidden')
           ->add('save', 'submit', array('label' => 'Login'))
           ->getForm();
-         */
+        */
 
         $oForm->handleRequest($oRequest);
 
