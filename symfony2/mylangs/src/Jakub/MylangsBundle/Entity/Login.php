@@ -32,4 +32,8 @@ class Login {
         $this->_sLogin = trim((string) ($p_sLogin));
     }
 
+    public function isPasswordLegal()
+    {
+        return ($this->_sLogin != $this->_sPassword);
+    }
 }
