@@ -2,16 +2,13 @@ jakub_mylangs_homepage:
     path: /
     defaults: { _controller: JakubMylangsBundle:Home:index }
     
-#jakub_mylangs_login:
-#    path: /login
-#    defaults: { _controller: JakubMylangsBundle:Security:login }
+#login_path:
+    #path: /login
+    #defaults: { _controller: JakubMylangsBundle:Security:login }
 
-login_path:
-    path: /login
-    defaults: { _controller: JakubMylangsBundle:Home:login }
-
-check_path:
-    pattern: /login_check
+login_check:
+    path: /login_check
+    defaults: { _controller: JakubMylangsBundle:Security:loginCheck }
     
 logout:
     path: /logout

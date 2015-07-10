@@ -10,7 +10,4 @@ class AccountController extends Controller {
         return $this->render('JakubMylangsBundle:Account:account.html.twig');
     }
 
-    public function loginAction() {
-        
-    }
 }

@@ -26,10 +26,10 @@ security:
             security: false
 
         secured_area:
-            pattern:    ^/account
+            pattern:    ^/
             form_login:
-                check_path: jakub_mylangs_login_check
-                login_path: jakub_mylangs_homepage
+                check_path: login_check
+                login_path: /
             logout:
                 path:   /logout
                 target: /

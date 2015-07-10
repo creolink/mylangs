@@ -1,9 +1,9 @@
 Jakub\MylangsBundle\Entity\Login:
     getters:
         passwordLegal:
-            - "True": { message: "Hasło i login nie mogą być takie same!" }
+            - "True": { message: "Login and password can't be the same!" }
     properties:
         _sUserName:
-            - NotBlank: {message: Wpisz login}
+            - NotBlank: {message: "Write your login"}
         _sPassword:
-            - NotBlank: {message: Wpisz hasło}
+            - NotBlank: {message: "Write your password"}
