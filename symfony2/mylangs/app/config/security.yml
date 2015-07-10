@@ -8,7 +8,7 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        main:
+        user_db:
             entity: { class: Jakub\MylangsBundle\Entity\User, property: username }
         #in_memory:
             #memory:
@@ -27,9 +27,12 @@ security:
 
         secured_area:
             pattern:    ^/
+            anonymous: ~
             form_login:
                 check_path: login_check
                 login_path: /
+                username_parameter: login[username]
+                password_parameter: login[password]
             logout:
                 path:   /logout
                 target: /
@@ -38,5 +41,5 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/account, roles: ROLE_USER }
+        - { path: ^/, roles: ROLE_USER }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

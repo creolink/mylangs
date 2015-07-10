@@ -14,9 +14,10 @@ use Jakub\MylangsBundle\Form\Type\LoginType;
 class SecurityController extends Controller
 {
     public function loginAction(Request $oRequest) {
+        //echo '<pre>'.print_r($oRequest, TRUE).'</pre>'; die();
+        
         $oSession = $oRequest->getSession();
 
-        // get the login error if there is one
         if ($oRequest->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $oRequest->attributes->get(
                 SecurityContext::AUTHENTICATION_ERROR
@@ -29,10 +30,12 @@ class SecurityController extends Controller
         $oLogin = new Login();
         $oForm = $this->createForm(new LoginType(), $oLogin, array('action' => $this->generateUrl('login_check')));
 
+        /*
         $oValidator = $this->get('validator');
         $errors = $oValidator->validate($oLogin);
         
         $oForm->handleRequest($oRequest);
+        */
         
         return $this->render(
             'JakubMylangsBundle:Home:home.html.twig',
@@ -49,6 +52,6 @@ class SecurityController extends Controller
     }
     
     public function loginCheckAction() {
-        
+        //echo '<pre>'.print_r($_POST, TRUE).'</pre>'; die();
     }
 }

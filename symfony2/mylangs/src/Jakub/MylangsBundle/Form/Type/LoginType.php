@@ -19,15 +19,15 @@ class LoginType extends AbstractType {
         return 'login';
     }
 
-    public function setDefaultOptions(OptionsResolverInterface $resolver) {
-        $resolver->setDefaults(array(
+    public function setDefaultOptions(OptionsResolverInterface $oResolver) {
+        $oResolver->setDefaults(array(
             'data_class' => 'Jakub\MylangsBundle\Entity\Login',
         ));
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $oResolver)
     {
-        $resolver->setDefaults(array(
+        $oResolver->setDefaults(array(
             'data_class' => 'Jakub\MylangsBundle\Entity\User'
         ));
     }
