@@ -24,6 +24,10 @@ security:
         login:
             pattern:  ^/$
             security: false
+            
+        register:
+            pattern:  ^/register$
+            security: false
 
         secured_area:
             pattern:    ^/

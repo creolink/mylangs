@@ -7,3 +7,15 @@ Jakub\MylangsBundle\Entity\Login:
             - NotBlank: {message: "Write your login"}
         _sPassword:
             - NotBlank: {message: "Write your password"}
+            
+Jakub\MylangsBundle\Entity\Register:
+    getters:
+        passwordLegal:
+            - "True": { message: "Login and password can't be the same!" }
+        passwordConfirm:
+            - "True": { message: "Both passwords must be the same!" }
+    properties:
+        _sUserName:
+            - NotBlank: {message: "Write your login"}
+        _sPassword:
+            - NotBlank: {message: "Write your password"}

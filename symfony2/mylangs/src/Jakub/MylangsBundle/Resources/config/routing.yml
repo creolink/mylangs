@@ -1,3 +1,14 @@
+login_check:
+    path: /login_check
+    defaults: { _controller: JakubMylangsBundle:Security:loginCheck }
+    
+logout:
+    path: /logout
+    
+register:
+    path: /register
+    defaults: { _controller: JakubMylangsBundle:Register:index }
+    
 jakub_mylangs_homepage:
     path: /
     defaults: { _controller: JakubMylangsBundle:Home:index }
@@ -6,17 +17,12 @@ jakub_mylangs_homepage:
     #path: /login
     #defaults: { _controller: JakubMylangsBundle:Security:login }
 
-login_check:
-    path: /login_check
-    defaults: { _controller: JakubMylangsBundle:Security:loginCheck }
-    
-logout:
-    path: /logout
-
 jakub_mylangs_account:
     path: /account
     defaults: { _controller: JakubMylangsBundle:Account:index }
     
+
+
 #user_routes:
     #resource: "@UserBundle/Controller"
     #type: annotation
