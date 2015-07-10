@@ -35,6 +35,10 @@ class SecurityController extends Controller
         $errors = $oValidator->validate($oLogin);
         
         $oForm->handleRequest($oRequest);
+
+        if ($oForm->isValid()) {
+            return $this->redirect($this->generateUrl('jakub_mylangs_account'));
+        }
         */
         
         return $this->render(

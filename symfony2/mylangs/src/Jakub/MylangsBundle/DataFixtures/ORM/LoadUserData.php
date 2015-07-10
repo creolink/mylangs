@@ -13,35 +13,41 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
     /**
      * @var ContainerInterface
      */
-    private $container;
+    private $oContainer;
     
     /**
      * {@inheritDoc}
      */
-    public function setContainer(ContainerInterface $container = null)
+    public function setContainer(ContainerInterface $oContainer = null)
     {
-        $this->container = $container;
+        $this->oContainer = $oContainer;
     }
     
     /**
      * {@inheritDoc}
      */
-    public function load(ObjectManager $manager)
+    public function loadUser(ObjectManager $oManager, $sUserName, $sPassword, $sFullName, $sEmail)
     {
-        $userAdmin = new User();
-        $userAdmin->setUsername('admin');
-        $userAdmin->setSalt(md5(uniqid()));
+        $oUser = new User();
+        $oUser->setUsername($sUserName);
+        //$oUser->setSalt(md5(uniqid()));
         
-        $encoder = $this->container->get('security.encoder_factory')->getEncoder($userAdmin);
+        $encoder = $this->oContainer->get('security.encoder_factory')->getEncoder($oUser);
         
-        $userAdmin->setPassword($encoder->encodePassword('secret', $userAdmin->getSalt()));
-        $userAdmin->setFullname('Jakub Luczynski');
-        $userAdmin->setEmail('jakub.luczynski@gmail.com');
+        $oUser->setPassword($encoder->encodePassword($sPassword, $oUser->getSalt()));
+        $oUser->setFullname($sFullName);
+        $oUser->setEmail($sEmail);
 
-        $manager->persist($userAdmin);
-        $manager->flush();
+        $oManager->persist($oUser);
+        $oManager->flush();
         
-        $this->addReference('admin-user', $userAdmin);
+        $this->addReference($sUserName, $oUser);
+    }
+    
+    public function load(ObjectManager $oManager)
+    {
+        $this->loadUser($oManager, 'admin1', 'test1', 'Andrzej Kmicic', 'andrzej.kmicic@creolink.pl');
+        $this->loadUser($oManager, 'admin2', 'test2', 'Jakub Luczynski', 'jakub.luczynski@creolink.pl');
     }
     
     /**
