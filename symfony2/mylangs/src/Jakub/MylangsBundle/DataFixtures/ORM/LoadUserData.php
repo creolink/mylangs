@@ -8,6 +8,8 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Jakub\MylangsBundle\Entity\User;
 
+/* php app/console doctrine:fixtures:load */
+
 class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
     /**
