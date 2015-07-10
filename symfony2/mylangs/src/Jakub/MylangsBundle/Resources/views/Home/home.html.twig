@@ -38,6 +38,9 @@
 		<div id="en" class="en flag"></div>
 		<div id="de" class="de flag"></div>
 	</div>
+	{% if error %}
+		<div>{{ error.message }}</div>
+	{% endif %}
 	<div class="ctn ce">
 		<p>Please login into your account</p>
 		{{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}

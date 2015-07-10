@@ -4,7 +4,7 @@ namespace Jakub\MylangsBundle\Entity;
 
 class Login {
 
-    protected $_sLogin;
+    protected $_sUserName;
     protected $_sPassword;
     protected $_sLang;
 
@@ -24,16 +24,15 @@ class Login {
         $this->_sLang = trim((string) ($p_sLang));
     }
 
-    public function getLogin() {
-        return ($this->_sLogin);
+    public function getUserName() {
+        return ($this->_sUserName);
     }
 
-    public function setLogin($p_sLogin) {
-        $this->_sLogin = trim((string) ($p_sLogin));
+    public function setUserName($p_sUserName) {
+        $this->_sUserName = trim((string) ($p_sUserName));
     }
 
-    public function isPasswordLegal()
-    {
-        return ($this->_sLogin != $this->_sPassword);
+    public function isPasswordLegal() {
+        return ($this->_sUserName != $this->_sPassword);
     }
 }

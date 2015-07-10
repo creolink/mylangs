@@ -3,7 +3,7 @@ Jakub\MylangsBundle\Entity\Login:
         passwordLegal:
             - "True": { message: "Hasło i login nie mogą być takie same!" }
     properties:
-        _sLogin:
+        _sUserName:
             - NotBlank: {message: Wpisz login}
         _sPassword:
             - NotBlank: {message: Wpisz hasło}

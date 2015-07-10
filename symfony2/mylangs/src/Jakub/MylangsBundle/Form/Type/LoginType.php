@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class LoginType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $oBuilder, array $aOptions) {
-        $oBuilder->add('login', 'text', array('label' => 'Your username:'));
+        $oBuilder->add('username', 'text', array('label' => 'Your username:'));
         $oBuilder->add('password', 'password', array('label' => 'Your password:'));
         $oBuilder->add('lang', 'hidden');
         $oBuilder->add('save', 'submit', array('label' => 'Login'));
@@ -25,4 +25,10 @@ class LoginType extends AbstractType {
         ));
     }
 
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Jakub\MylangsBundle\Entity\User'
+        ));
+    }
 }

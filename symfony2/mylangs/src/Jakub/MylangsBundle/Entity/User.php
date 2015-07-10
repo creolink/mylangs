@@ -2,7 +2,7 @@
 namespace Jakub\MylangsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /* php app/console doctrine:generate:entities Jakub/MylangsBundle/Entity/User */
 /* php app/console doctrine:generate:entities Jakub */
@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity
  * @ORM\Table(name="users", options={"comment":"Users"})
  */
-class User implements UserInterface, \Serializable {
+class User implements AdvancedUserInterface, \Serializable {
 
     /**
      * @ORM\Id
@@ -46,6 +46,8 @@ class User implements UserInterface, \Serializable {
      * @ORM\Column(name="is_active", type="boolean", options={"comment":"user flag, 0 - blocked, 1 - active"})
      */
     private $isActive;
+    
+    private $salt;
 
     public function __construct()
     {
@@ -66,8 +68,8 @@ class User implements UserInterface, \Serializable {
             $this->id,
             $this->username,
             $this->password,
-            // see section on salt below
-            // $this->salt,
+            $this->salt,
+            $this->isActive
         ));
     }
     
@@ -78,20 +80,43 @@ class User implements UserInterface, \Serializable {
             $this->id,
             $this->username,
             $this->password,
-            // see section on salt below
-            // $this->salt
+            $this->salt,
+            $this->isActive
         ) = unserialize($serialized);
     }
     
     public function getSalt()
     {
-        // you *may* need a real salt depending on your encoder
-        // see section on salt below
-        return null;
+        return $this->salt;
+    }
+    
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
     }
     
     public function eraseCredentials()
     {
+    }
+    
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
     }
 
     /**

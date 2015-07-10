@@ -7,8 +7,8 @@ jakub_mylangs_homepage:
 #    defaults: { _controller: JakubMylangsBundle:Security:login }
 
 login_path:
-    path: /
-    defaults: { _controller: JakubMylangsBundle:Security:index }
+    path: /login
+    defaults: { _controller: JakubMylangsBundle:Home:login }
 
 check_path:
     pattern: /login_check
@@ -19,3 +19,7 @@ logout:
 jakub_mylangs_account:
     path: /account
     defaults: { _controller: JakubMylangsBundle:Account:index }
+    
+#user_routes:
+    #resource: "@UserBundle/Controller"
+    #type: annotation

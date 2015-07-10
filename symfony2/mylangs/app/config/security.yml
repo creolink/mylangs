@@ -9,7 +9,7 @@ security:
 
     providers:
         main:
-            entity: { class: JakubBundle\Entity\User, property: login }
+            entity: { class: Jakub\MylangsBundle\Entity\User, property: username }
         #in_memory:
             #memory:
                 #users:
