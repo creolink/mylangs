@@ -19,9 +19,4 @@ class HomeController extends Controller {
         
         return $oResponse;
     }
-    
-    public function loginAction() {
-        
-    }
-
 }
