@@ -14,8 +14,18 @@ Jakub\MylangsBundle\Entity\Register:
             - "True": { message: "Login and password can't be the same!" }
         passwordConfirm:
             - "True": { message: "Both passwords must be the same!" }
+        #minPasswordLength:
+        #    - "True": { message: "Password is too short!" }
+        #minUsernameLength:
+        #    - "True": { message: "Username is too short!" }
+
     properties:
         _sUserName:
             - NotBlank: {message: "Write your login"}
+            - Length: {min: 3, minMessage: "Username is too short!"}
+            - Email: {checkMX: true, checkHost: true}
         _sPassword:
             - NotBlank: {message: "Write your password"}
+            - Length: {min: 4, minMessage: "Password is too short!"}
+        _bTermsAccepted:
+            - NotBlank: {message: "Confirm terms"}

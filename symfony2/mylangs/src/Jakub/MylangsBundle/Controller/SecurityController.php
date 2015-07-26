@@ -37,7 +37,7 @@ class SecurityController extends Controller
         $oForm->handleRequest($oRequest);
 
         if ($oForm->isValid()) {
-            return $this->redirect($this->generateUrl('jakub_mylangs_account'));
+            return $this->redirect($this->generateUrl('account'));
         }
         */
         

@@ -4,8 +4,10 @@ namespace Jakub\MylangsBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+
 use Jakub\MylangsBundle\Entity\User;
 
 /* php app/console doctrine:fixtures:load */
@@ -34,9 +36,9 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $oUser->setUsername($sUserName);
         //$oUser->setSalt(md5(uniqid()));
         
-        $encoder = $this->oContainer->get('security.encoder_factory')->getEncoder($oUser);
+        $oEncoder = $this->oContainer->get('security.encoder_factory')->getEncoder($oUser);
         
-        $oUser->setPassword($encoder->encodePassword($sPassword, $oUser->getSalt()));
+        $oUser->setPassword($oEncoder->encodePassword($sPassword, $oUser->getSalt()));
         $oUser->setFullname($sFullName);
         $oUser->setEmail($sEmail);
 

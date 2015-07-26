@@ -19,13 +19,14 @@
 		<p>Welcome into your account: {{ app.user.username }}  <a href="{{ path('logout') }}">logout</a></p>
 	</div>
 	<div class="ctn ce">
-		<a href="{{ path('logout') }}">rzeczowniki</a>
-		<a href="{{ path('logout') }}">czasowniki</a>
-		<a href="{{ path('logout') }}">przymiotniki</a>
-		<a href="{{ path('logout') }}">zwroty i frazy</a>
-		<a href="{{ path('logout') }}">tabelki</a>
-		<a href="{{ path('logout') }}">dodaj slowo</a>
-		<a href="{{ path('logout') }}">dodaj zwrot</a>
-		<a href="{{ path('logout') }}">dodaj tabelke</a>
+		<a href="{{ path('nouns') }}">nouns</a>
+		<a href="{{ path('verbs') }}">verbs</a>
+		<a href="{{ path('adjectives') }}">adjectives</a>
+		<a href="{{ path('phrases') }}">phrases</a>
+		<a href="{{ path('tables') }}">tables</a>
+		<a href="{{ path('addword') }}">add word</a>
+		<a href="{{ path('addphrase') }}">add phrase</a>
+		<a href="{{ path('addtable') }}">add table</a>
 	</div>
+	{% block module %}{% endblock %}
 {% endblock %}

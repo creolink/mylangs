@@ -1,27 +1,53 @@
+homepage:
+    path: /
+    defaults: { _controller: JakubMylangsBundle:Home:index }
+    
+register:
+    path: /register
+    defaults: { _controller: JakubMylangsBundle:Register:index }
+
 login_check:
     path: /login_check
     defaults: { _controller: JakubMylangsBundle:Security:loginCheck }
     
 logout:
     path: /logout
-    
-register:
-    path: /register
-    defaults: { _controller: JakubMylangsBundle:Register:index }
-    
-jakub_mylangs_homepage:
-    path: /
-    defaults: { _controller: JakubMylangsBundle:Home:index }
-    
-#login_path:
-    #path: /login
-    #defaults: { _controller: JakubMylangsBundle:Security:login }
 
-jakub_mylangs_account:
+account:
     path: /account
     defaults: { _controller: JakubMylangsBundle:Account:index }
-    
 
+nouns:
+    path: /nouns
+    defaults: { _controller: JakubMylangsBundle:Nouns:index }
+
+verbs:
+    path: /verbs
+    defaults: { _controller: JakubMylangsBundle:Verbs:index }
+
+adjectives:
+    path: /adjectives
+    defaults: { _controller: JakubMylangsBundle:Adjectives:index }
+
+phrases:
+    path: /phrases
+    defaults: { _controller: JakubMylangsBundle:Phrases:index }
+    
+tables:
+    path: /tables
+    defaults: { _controller: JakubMylangsBundle:Tables:index }
+    
+addword:
+    path: /word/add
+    defaults: { _controller: JakubMylangsBundle:Word:index }
+    
+addphrase:
+    path: /phrase/add
+    defaults: { _controller: JakubMylangsBundle:Phrase:index }
+    
+addtable:
+    path: /table/add
+    defaults: { _controller: JakubMylangsBundle:Table:index }
 
 #user_routes:
     #resource: "@UserBundle/Controller"

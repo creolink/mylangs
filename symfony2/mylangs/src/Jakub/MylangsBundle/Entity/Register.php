@@ -7,6 +7,7 @@ class Register {
     protected $_sUserName;
     protected $_sPassword;
     protected $_sConfirm;
+    protected $_bTermsAccepted;
 
     public function getPassword() {
         return ($this->_sPassword);
@@ -31,12 +32,30 @@ class Register {
     public function setUserName($p_sUserName) {
         $this->_sUserName = trim((string)($p_sUserName));
     }
+    
+    public function getTermsAccepted()
+    {
+        return $this->_bTermsAccepted;
+    }
+
+    public function setTermsAccepted($p_bTermsAccepted)
+    {
+        $this->_bTermsAccepted = ((bool)($p_bTermsAccepted));
+    }
 
     public function isPasswordLegal() {
-        return ($this->_sUserName != $this->_sPassword);
+        return (strlen($this->_sPassword) == 0 || $this->_sUserName != $this->_sPassword);
     }
     
-    public function ispasswordConfirm() {
+    public function isPasswordConfirm() {
         return ($this->_sConfirm == $this->_sPassword);
+    }
+    
+    public function isMinPasswordLength() {
+        return (strlen($this->_sPassword) > 6);
+    }
+    
+    public function isMinUsernameLength() {
+        return (strlen($this->_sUserName) > 6);
     }
 }

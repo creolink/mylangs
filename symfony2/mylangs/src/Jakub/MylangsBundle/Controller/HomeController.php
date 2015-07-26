@@ -13,10 +13,6 @@ use Jakub\MylangsBundle\Form\Type\LoginType;
 class HomeController extends Controller {
 
     public function indexAction(Request $oRequest) {
-        $oResponse = $this->forward('JakubMylangsBundle:Security:login', array($oRequest));
-        
-        //echo '<pre>'.print_r($response, TRUE).'</pre>'; die();
-        
-        return $oResponse;
+        return ($this->forward('JakubMylangsBundle:Security:login', array($oRequest)));
     }
 }
