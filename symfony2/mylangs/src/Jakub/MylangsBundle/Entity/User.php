@@ -2,7 +2,10 @@
 namespace Jakub\MylangsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /* php app/console doctrine:generate:entities Jakub/MylangsBundle/Entity/User */
 /* php app/console doctrine:generate:entities Jakub */
@@ -12,6 +15,7 @@ use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 /**
  * @ORM\Entity
  * @ORM\Table(name="users", options={"comment":"Users"})
+ * @UniqueEntity("email")
  */
 class User implements AdvancedUserInterface, \Serializable {
 
@@ -39,6 +43,7 @@ class User implements AdvancedUserInterface, \Serializable {
     
     /**
      * @ORM\Column(type="string", length=60, unique=true, options={"comment":"user email"})
+     * @Assert\Email()
      */
     private $email;
     
