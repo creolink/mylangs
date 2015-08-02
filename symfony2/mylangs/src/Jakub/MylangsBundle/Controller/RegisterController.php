@@ -15,8 +15,14 @@ use Jakub\MylangsBundle\Entity\User;
 
 class RegisterController extends Controller {
 
-    public function indexAction(Request $oRequest) {
-        $oForm = $this->createForm(new RegisterType(), new Register(), array('action' => $this->generateUrl('register')));
+    public function indexAction(Request $oRequest)
+    {
+        $oDB = $this->getDoctrine()->getManager();
+        
+        $oRegister = new Register();
+        $oRegister->setDB($oDB);
+        
+        $oForm = $this->createForm(new RegisterType(), $oRegister, array('action' => $this->generateUrl('register')));
         
         $oForm->handleRequest($oRequest);
         
@@ -34,12 +40,11 @@ class RegisterController extends Controller {
             $oUser->setFullname('');
             $oUser->setEmail($oRegistration->getUserName());
             
-            //echo '<pre>'.print_r($oRegistration->getPassword(), TRUE).'</pre>'; die();
-            
-            $oDB = $this->getDoctrine()->getManager();
+            // create user
             $oDB->persist($oUser);
             $oDB->flush();
             
+            // autologin after registration
             $oToken = new UsernamePasswordToken($oUser, null, 'secured_area', array('ROLE_USER'));
             $this->get('security.context')->setToken($oToken);
             $this->get('session')->set('_security_secured_area', serialize($oToken));

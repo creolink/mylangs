@@ -8,6 +8,9 @@ class Register {
     protected $_sPassword;
     protected $_sConfirm;
     protected $_bTermsAccepted;
+    protected $_sUserId;
+    
+    protected $_oDB;
 
     public function getPassword() {
         return ($this->_sPassword);
@@ -57,5 +60,23 @@ class Register {
     
     public function isMinUsernameLength() {
         return (strlen($this->_sUserName) > 6);
+    }
+    
+    public function setDB($p_oDB)
+    {
+        $this->_oDB = $p_oDB;
+    }
+    
+    public function isUserDuplicated()
+    {
+        $oQuery = $this->_oDB->createQuery("SELECT count(u.id) FROM Jakub\MylangsBundle\Entity\User u WHERE (u.username = '".$this->_sUserName."')"); // AND u.id <> '".$this->_sUserId."'
+        $iResult = $oQuery->getSingleScalarResult();
+        
+        return (($iResult >= 1) ? TRUE : FALSE);
+    }
+    
+    public function isEmailDuplicated()
+    {
+        
     }
 }
