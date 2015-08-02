@@ -48,6 +48,7 @@ addphrase:
 addtable:
     path: /table/add
     defaults: { _controller: JakubMylangsBundle:Table:index }
+    
 
 #user_routes:
     #resource: "@UserBundle/Controller"

@@ -59,7 +59,5 @@ class RegisterController extends Controller {
                 'error'         => ''
             )
         );
-        
-        return $oResponse;
     }
 }
