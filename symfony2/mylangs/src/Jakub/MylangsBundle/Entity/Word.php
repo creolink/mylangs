@@ -111,4 +111,17 @@ class Word {
     {
         return $this->native;
     }
+    
+    // words, wordstype
+    protected $words;
+    
+    public function getWords()
+    {
+        return $this->words;
+    }
+
+    public function setWords(Words $words = null)
+    {
+        $this->words = $words;
+    }
 }

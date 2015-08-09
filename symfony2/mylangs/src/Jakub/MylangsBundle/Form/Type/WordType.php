@@ -10,13 +10,17 @@ class WordType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $oBuilder, array $aOptions) {
         $oBuilder->add('id', 'hidden');
-        $oBuilder->add('type', 'text', array('label' => 'Type of word:'));
-        $oBuilder->add('word_en', 'text', array('label' => 'Word in English:'));
-        $oBuilder->add('word_de', 'text', array('label' => 'Word in Deutch:'));
+        $oBuilder->add('type', 'choice', array('label' => 'Type of word:'));
         $oBuilder->add('native', 'password', array('label' => 'Translation:'));
         $oBuilder->add('countable', 'checkbox', array('label' => 'Is countable:'));
         
-        $oBuilder->add('save', 'submit', array('label' => 'Register'));
+        //$oBuilder->add('word_en', 'text', array('label' => 'Word in English:'));
+        //$oBuilder->add('word_de', 'text', array('label' => 'Word in Deutch:'));
+        //$oBuilder->add('word', 'entity', array('class' => 'JakubMylangsBundle:Words'));
+        //$oBuilder->add('word');
+        $oBuilder->add('words', new WordsType());
+        
+        $oBuilder->add('save', 'submit', array('label' => 'Save word'));
     }
 
     public function getName() {

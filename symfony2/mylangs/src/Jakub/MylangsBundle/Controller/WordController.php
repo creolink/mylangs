@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Jakub\MylangsBundle\Entity\Word;
 use Jakub\MylangsBundle\Form\Type\WordType;
 
+
 class WordController extends Controller {
 
     public function indexAction() {

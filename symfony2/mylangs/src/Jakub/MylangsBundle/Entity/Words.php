@@ -19,6 +19,11 @@ class Words {
     protected $words_id;
     
     /**
+     * @ORM\Column(type="integer", options={"comment":"language id === languages.id"})
+     */
+    protected $languages_id;
+    
+    /**
      * @ORM\Column(type="string", length=250, options={"comment":"fraze in selected language"})
      */
     protected $word;
@@ -67,5 +72,28 @@ class Words {
     public function getWord()
     {
         return $this->word;
+    }
+
+    /**
+     * Set languages_id
+     *
+     * @param integer $languagesId
+     * @return Words
+     */
+    public function setLanguagesId($languagesId)
+    {
+        $this->languages_id = $languagesId;
+
+        return $this;
+    }
+
+    /**
+     * Get languages_id
+     *
+     * @return integer 
+     */
+    public function getLanguagesId()
+    {
+        return $this->languages_id;
     }
 }
