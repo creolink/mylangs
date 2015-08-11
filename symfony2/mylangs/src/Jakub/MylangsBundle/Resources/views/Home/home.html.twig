@@ -1,51 +1,51 @@
 {% extends "JakubMylangsBundle::base.html.twig" %}
 
 {% block stylesheets %}
-	<link href="{{ asset('/bundles/jakubmylangs/css/home.css') }}" type="text/css" rel="stylesheet" />
-	{{ parent() }}
+    <link href="{{ asset('/bundles/jakubmylangs/css/home.css') }}" type="text/css" rel="stylesheet" />
+    {{ parent() }}
 {% endblock %}
 
 {% block javascripts %}
-	<script language="javascript" type="text/javascript">
-		$('.flag').click(
-			function()
-			{
-				$('#{{ form.lang.vars.id}}').val($(this).attr('id'));
-				
-				$('.flag').each(function() {
-					$(this).removeClass('active');
-				});
-				
-				$(this).addClass('active');
-			}
-		);
+    <script language="javascript" type="text/javascript">
+        $('.flag').click(
+            function()
+            {
+                $('#{{ form.lang.vars.id}}').val($(this).attr('id'));
+                
+                $('.flag').each(function() {
+                    $(this).removeClass('active');
+                });
+                
+                $(this).addClass('active');
+            }
+        );
 
-		// default language is en
-		if (!$('#{{ form.lang.vars.id}}').val())
-		{
-			$('#en').click();
-		}
-		else // is selected
-		{
-			$('#' + $('#{{ form.lang.vars.id}}').val()).click();
-		}
-	</script>
+        // default language is en
+        if (!$('#{{ form.lang.vars.id}}').val())
+        {
+            $('#en').click();
+        }
+        else // is selected
+        {
+            $('#' + $('#{{ form.lang.vars.id}}').val()).click();
+        }
+    </script>
 {% endblock %}
 
 {% block content %}
-	<div class="ctn ce">
-		<h1>Welcome into MyLangs application by Jakub Luczynski</h1>
-		<div id="en" class="en flag"></div>
-		<div id="de" class="de flag"></div>
-	</div>
-	<div class="ctn ce">
-		<p>Please login into your account</p>
-		{% if error %}
-			<p>{{ error.message }}</p>
-		{% endif %}
-		{{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
-	</div>
-	<div class="ctn ce">
-		<a href="{{ path('register') }}">registration</a>
-	</div>
+    <div class="ctn ce">
+        <h1>Welcome into MyLangs application by Jakub Luczynski</h1>
+        <div id="en" class="en flag"></div>
+        <div id="de" class="de flag"></div>
+    </div>
+    <div class="ctn ce">
+        <p>Please login into your account</p>
+        {% if error %}
+            <p>{{ error.message }}</p>
+        {% endif %}
+        {{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    </div>
+    <div class="ctn ce">
+        <a href="{{ path('register') }}">registration</a>
+    </div>
 {% endblock %}
