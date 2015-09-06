@@ -1,6 +1,6 @@
 <?php
 /*
- * 
+ * https://github.com/creolink/mylangs
  */
 
 namespace Jakub\MylangsBundle;
