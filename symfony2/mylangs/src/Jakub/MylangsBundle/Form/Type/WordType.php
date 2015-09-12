@@ -6,8 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class WordType extends AbstractType {
-
+class WordType extends AbstractType
+{
     public function buildForm(FormBuilderInterface $oBuilder, array $aOptions) {
         $oBuilder->add('id', 'hidden');
         $oBuilder->add('type', 'choice', array('label' => 'Type of word:'));

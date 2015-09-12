@@ -10,7 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="words", options={"comment":"Words"})
  */
-class Word {
+class Word
+{
     /**
      * @ORM\Id
      * @ORM\Column(type="integer", options={"comment":"unique autoincremented id, id of word"})
