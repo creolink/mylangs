@@ -13,8 +13,8 @@ use Jakub\MylangsBundle\Entity\User;
 #use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 #use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class RegisterController extends Controller {
-
+class RegisterController extends Controller
+{
     public function indexAction(Request $oRequest)
     {
         $oDB = $this->getDoctrine()->getManager();
